@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pink Press – Miniaturas 3D Premium</title>
+  <meta name="description" content="Pink Press - Miniaturas 3D personalizadas com acabamento premium. Transformamos fotos em arte." />
+
+  <!-- FONTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --pink1:#ff7ac3;
+      --pink2:#ff2e93;
+      --dark:#5a0030;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:radial-gradient(circle at top,#ffc1e3,#5a0030);
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    /* HERO */
+    header{
+      height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      overflow:hidden;
+    }
+
+    .hero-bg{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg,var(--pink1),var(--pink2));
+      animation:gradientMove 8s infinite alternate;
+      z-index:-2;
+    }
+
+    .hero-content{
+      max-width:800px;
+      padding:20px;
+      animation:fadeDown 1.2s ease;
+    }
+
+    header h1{
+      font-size:4rem;
+      letter-spacing:4px;
+      margin-bottom:10px;
+    }
+
+    header p{
+      font-size:1.4rem;
+      opacity:.95;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:35px;
+      padding:20px 42px;
+      border-radius:999px;
+      background:linear-gradient(135deg,#fff,var(--pink1));
+      color:#5a0030;
+      font-weight:800;
+      text-decoration:none;
+      box-shadow:0 20px 45px rgba(0,0,0,.5);
+      transition:.4s ease;
+    }
+
+    .btn:hover{transform:scale(1.15) rotate(-1deg)}
+
+    section{padding:100px 20px;max-width:1300px;margin:auto}
+    h2{text-align:center;font-size:2.8rem;margin-bottom:70px}
+
+    /* SLIDER */
+    .slider{
+      position:relative;
+      overflow:hidden;
+      border-radius:40px;
+      box-shadow:0 40px 80px rgba(0,0,0,.6);
+    }
+
+    .slides{
+      display:flex;
+      width:400%;
+      animation:slide 18s infinite;
+    }
+
+    .slide{
+      width:100%;
+      min-height:420px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:2rem;
+      font-weight:700;
+      background:linear-gradient(135deg,var(--pink1),var(--pink2));
+    }
+
+    /* CARDS */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:45px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.15);
+      backdrop-filter:blur(14px);
+      border-radius:35px;
+      padding:45px 35px;
+      text-align:center;
+      box-shadow:0 30px 70px rgba(0,0,0,.45);
+      transition:.5s ease;
+      animation:fadeUp 1.2s ease;
+    }
+
+    .card:hover{transform:translateY(-18px) scale(1.05)}
+
+    .price{font-size:1.8rem;color:#ffd1ea;font-weight:700}
+
+    /* GALERIA */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .img-box{
+      height:320px;
+      border-radius:35px;
+      background:linear-gradient(135deg,#ff9fd5,#ff3d9a);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:1.3rem;
+      box-shadow:0 30px 70px rgba(0,0,0,.6);
+      animation:zoomIn .9s ease;
+    }
+
+    /* STEPS */
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:40px;
+    }
+
+    .step{
+      background:rgba(0,0,0,.3);
+      border-radius:40px;
+      padding:45px;
+      text-align:center;
+      animation:fadeUp 1.3s ease;
+    }
+
+    .step span{font-size:3.5rem;display:block;margin-bottom:20px}
+
+    footer{
+      background:rgba(0,0,0,.45);
+      padding:50px 20px;
+      text-align:center;
+      opacity:.9;
+    }
+
+    /* WHATSAPP */
+    .whatsapp{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      width:78px;
+      height:78px;
+      border-radius:50%;
+      background:#25D366;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:34px;
+      text-decoration:none;
+      box-shadow:0 25px 50px rgba(0,0,0,.6);
+      animation:pulse 1.8s infinite;
+    }
+
+    /* ANIMAÇÕES */
+    @keyframes fadeDown{from{opacity:0;transform:translateY(-80px)}to{opacity:1;transform:none}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(80px)}to{opacity:1;transform:none}}
+    @keyframes zoomIn{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.15)}100%{transform:scale(1)}}
+    @keyframes gradientMove{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(30deg)}}
+    @keyframes slide{0%,20%{transform:translateX(0)}25%,45%{transform:translateX(-25%)}50%,70%{transform:translateX(-50%)}75%,100%{transform:translateX(-75%)}}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1>Pink Press</h1>
+    <p>Miniaturas 3D personalizadas que transformam fotos em arte exclusiva.</p>
+    <a class="btn" href="https://wa.me/556193698501?text=Ol%C3%A1%20quero%20uma%20miniatura%203D%20personalizada" target="_blank">Quero minha miniatura</a>
+  </div>
+</header>
+
+<section>
+  <h2>Destaques</h2>
+  <div class="slider">
+    <div class="slides">
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0');background-size:cover;background-position:center">
+        <div class="overlay">Miniaturas Artísticas</div>
+      </div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1632501641765-e568d28b0015');background-size:cover;background-position:center">
+        <div class="overlay">Design & Tecnologia</div>
+      </div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1612197527276-5f1b9b2e8d52');background-size:cover;background-position:center">
+        <div class="overlay">Impressão Premium</div>
+      </div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1602526219049-9f3b0f0f3c2f');background-size:cover;background-position:center">
+        <div class="overlay">Arte em 3D</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>O que fazemos</h2>
+  <div class="grid">
+    <div class="card"><h3>Pets & Pessoas</h3><p>Modelagem a partir de fotos reais.</p><div class="price">R$120+</div></div>
+    <div class="card"><h3>Acabamento Premium</h3><p>Alta definição e base personalizada.</p><div class="price">Detalhe máximo</div></div>
+    <div class="card"><h3>Presente Memorável</h3><p>Uma peça única para emocionar.</p><div class="price">Exclusivo</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Galeria de Miniaturas</h2>
+  <div class="gallery">
+    <div class="img-box">🐶 Miniatura de Pet<br><small>Retrato 3D realista</small></div>
+    <div class="img-box">🧍 Miniatura Humana<br><small>Feita a partir de fotos</small></div>
+    <div class="img-box">👨‍👩‍👧 Família em 3D<br><small>Presente emocional</small></div>
+    <div class="img-box">🎨 Detalhes & Acabamento<br><small>Pintura e base premium</small></div>
+  </div>
+</section>
+
+<section>
+  <h2>Como Funciona</h2>
+  <div class="steps">
+    <div class="step"><span>📸</span><h3>Envie as fotos</h3><p>Você envia tudo pelo WhatsApp.</p></div>
+    <div class="step"><span>🖨️</span><h3>Produção 3D</h3><p>Modelagem + impressão de alta precisão.</p></div>
+    <div class="step"><span>🎁</span><h3>Entrega</h3><p>Receba em casa com total segurança.</p></div>
+  </div>
+</section>
+
+<footer>
+  © 2025 • Pink Press – Impressão 3D Premium
+</footer>
+
+<a class="whatsapp" href="https://wa.me/556193698501?text=Ol%C3%A1%20quero%20uma%20miniatura%203D%20personalizada" target="_blank">🟢</a>
+
+</body>
+</html>
